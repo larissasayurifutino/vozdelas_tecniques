@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>README_projeto</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <!-- FontAwesome icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <main class="main">
+        <header class="top">
+            <nav class="top-nav">
+                <a class="top-brand" href="index.html" title="Home">Voz Delas</a>
+                <!-- <div class="top-links">
+                    <div>Fluxograma</div>
+                </div> -->
+            </nav>
+        </header>
+
+        <article class="article">
+            <!-- <div class="article-label"><b>Art</b> | Art History</div> -->
+            <h1 class="article-title">Os diferentes Tecniquês tim-tim por tim-tim</h1>
+            <section class="article-social-icons">
+                <a href="#" class="fa fa-github"></a>
+            </section>
+            <img src="assets/capa_lilas_VOZDELAS.png" class="img-opening" />
+            <section class="article-body">
+                <p class="lead">Os aspectos técnicos teóricos e computacionais do projeto apresentados com desenhos, referências e pontuando dificuldades e limitações.</p>
+                <p class="author">por <strong>Larissa Sayuri Futino Castro dos Santos</strong><br/><time datetime="2022-03-30 12:00">Março, 2022 - 12:00pm</time></p>
+
+
+
+                <p class="subheading">Objetivo</p>
+                <p class="subheading-body">Monitorar em tempo real os textos da Folha identificando e quantificando mulheres entrevistadas. Com isso, determinar áreas em que mais mulheres podem/devem ser mais ouvidas/citadas. Por fim, ter um banco de referências de mulheres ouvidas disponível para sugerir referências para os jornalistas da Folha. </p>
+
+
+                <!-- <div class="bloco_obj">  
+                    <div class="titulo">Objetivo</div>
+                    <div class="texto">
+                        Monitorar em tempo real os textos da Folha identificando e quantificando mulheres entrevistadas. Com isso, determinar áreas em que mais mulheres podem/devem ser mais ouvidas/citadas. Por fim, ter um banco de referências de mulheres ouvidas disponível para sugerir referências para os jornalistas da Folha. 
+                    </div>
+                </div>-->
+
+                <p class="subheading">Ler e Representar Textos</p>
+                <p class="subheading-body">A coleção de textos é armazenada em arquivos JSON.</p>
+                <p class="subheading-body">Cada reportagem é salva separadamente sendo a matéria representada por título, sub-título e o texto propriamente dito.</p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/1721238240959640_txt.jpg" />
+                        <figcaption class="img-caption">Cada reportagem é representada pelo seu conteúdo textual.</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <p class="subheading">Rotulação gramatical</p>
+                <p class="subheading-body">Cada texto é decomposto nas suas unidades, os tokens, e cada token é rotulado em categorias gramaticais (substantivos, verbos, pronomes, advérbios, artigos e conjunções) em uma tarefa conhecida como POS tagging.</p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/pos_tag.jpg" />
+                        <figcaption class="img-caption">Output dessa etapa: cada token com seu respectivo código de classe gramatical.</figcaption>
+                    </figure>
+                </div>
+
+
+                <p class="subheading">Reconhecimento de entidades</p>
+                <p class="subheading-body"> Cada texto passa por um modelo de Reconhecimento de Entidades (named entity recognition, ou NER em inglês). </p>
+                <p class="subheading-body"> O seu objetivo é reconhecer trechos de texto que constituem nomes próprios e categorizar entre Pessoa, Localização, Organização, Moeda, por exemplo. </p>
+                <p class="subheading-body"> Filtramos para manter entidades do tipo Pessoa.</p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/texto_entidades.jpg" />
+                        <figcaption class="img-caption">Queremos reconhecer quais trechos de texto são nomes próprios.</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <p class="subheading">Reconhecimento de citações</p>
+                <p class="subheading-body"> Em cada texto reconhecemos os trechos que são citações diretas de uma pessoa com o uso de Expressões Regulares. </p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/texto_aspas.jpg" />
+                        <figcaption class="img-caption">Queremos reconhecer quais trechos de texto são citações diretas.</figcaption>
+                    </figure>
+                </div>
+
+
+
+
+
+                <p class="subheading">Atribuir cada citação a um nome próprio</p>
+                <p class="subheading-body"> Precisamos responder: Dadas essas X declarações e essas pessoas Y quem falou o quê?</p>
+                <p class="subheading-body"> Fazemos uma matriz de distâncias absolutas entre os índices das sentenças das citações e os índices das sentenças das pessoas. </p>
+                <p class="subheading-body"> Cada aspas é atribuída à entidade mais próxima. </p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/matriz_distancia.jpg" />
+                        <figcaption class="img-caption">Queremos saber quem disse as citações.</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <p class="subheading">Atribuir gênero para os nomes encontrados</p>
+                <p class="subheading-body"> Cada entidade é representada pelo seu 1º nome próprio e usamos uma base do IBGE para atribuir um gênero a cada nome. </p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/brasilio_menor.jpg" />
+                        <figcaption class="img-caption">Usamos base de nome e gênero do IBGE.</figcaption>
+                    </figure>
+                </div>
+
+
+
+ 
+                <p class="subheading">Caracterizar entidades</p>
+                <p class="subheading-body"> Quem são as mulheres entrevistadas? </p>
+                <p class="subheading-body"> Pegamos os termos que acompanham (estão na vizinhança) das entidades. Desses termos ficamos com os substantivos e adjetivos que são do mesmo gênero da entidade citada. </p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/caract_desenho.jpg" />
+                        <figcaption class="img-caption">Usamos o contexto de mesmo gênero no nome próprio.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="teste">
+                    <div class="gallery">
+                        <a target="_blank" href="img_5terre.jpg">
+                        <img src="assets/metrics.jpg" alt="Cinque Terre" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <a target="_blank" href="img_forest.jpg">
+                        <img src="assets/metrics.jpg" alt="Forest" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <a target="_blank" href="img_5terre.jpg">
+                        <img src="assets/metrics.jpg" alt="Cinque Terre" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <a target="_blank" href="img_forest.jpg">
+                        <img src="assets/metrics.jpg" alt="Forest" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                </div>
+
+
+
+                <p class="subheading">Representar texto com métricas</p>
+                <p class="subheading-body"> Cada texto é representado por métricas resumo que são basicamente contagens de entidades com e sem citação por gênero. </p>
+
+                <div class="imagem">
+                    <figure class="img-block small">
+                        <img src="assets/metrics.jpg" />
+                        <figcaption class="img-caption">Cada texto pode ser resumido em função de números que representam suas características.</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <p class="subheading">Visualizar o cenário</p>
+                <p class="subheading-body"> Para termos um panorama geral dos textos e citações fazemos um painel com as métricas que torna fácil comparar editorias e jornalistas entre si e avaliar sua evolução com o passar do tempo. </p>
+
+
+                <div class="teste">
+                    <div class="gallery">
+                        <a target="_blank" href="img_5terre.jpg">
+                        <img src="assets/metrics.jpg" alt="Cinque Terre" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <a target="_blank" href="img_forest.jpg">
+                        <img src="assets/metrics.jpg" alt="Forest" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <a target="_blank" href="img_5terre.jpg">
+                        <img src="assets/metrics.jpg" alt="Cinque Terre" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                    
+                    <div class="gallery">
+                        <a target="_blank" href="img_forest.jpg">
+                        <img src="assets/metrics.jpg" alt="Forest" width="600" height="400">
+                        </a>
+                        <div class="desc">Cada texto pode ser resumido em função de números que representam suas características.</div>
+                    </div>
+                </div>
+                
+
+                <div class="bloco">
+                    <div class="titulo">Rotulação gramatical</div>
+                        <div class="texto">Cada texto é decomposto nas suas unidades, os tokens, e cada token é rotulado em categorias gramaticais (substantivos, verbos, pronomes, advérbios, artigos e conjunções) em uma tarefa conhecida como POS tagging.</div>
+                            <div class="imagem">
+                                <figure class="img-block small">
+                                    <img src="assets/pos_tag.jpg" />
+                                    <figcaption class="img-caption">Output dessa etapa: cada token com seu respectivo código de classe gramatical.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </section>
+        </article>
+        <footer class="bottom">
+            <p>© Copyright info</p>
+        </footer>
+    </main>
+</body>
+
+</html>
