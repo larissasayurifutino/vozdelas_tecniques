@@ -125,7 +125,9 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 180px;
-    padding: 0;
+    padding: 10px;
+    height: fit-content;
+    box-shadow: 2px 2px 20px #d1d1d1;
 }
   
 
@@ -160,6 +162,7 @@ div.img-texto{
     margin-right: auto;
     width: 75%;
     height: 100%;
+    box-shadow: 2px 2px 20px #d1d1d1;
 }  
 
 .area-grafico {
@@ -178,4 +181,62 @@ div.img-texto{
     height: 400px;
     
 
+}
+
+.index-nav {
+    margin: 5rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.index-nav a{
+  font-size: 12px;
+  text-decoration: none;
+  background: #000;
+  height: 30px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.index-nav a.um{
+  width: 60px;
+}
+
+.index-nav a.dois_um{
+  width: 60px;
+}
+
+.index-nav a.dois_dois{
+  width: 60px;
+}
+
+.index-nav a.dois_tres{
+  width: 70px;
+}
+
+.index-nav a.dois_quatro{
+  width: 45px;
+}
+
+.index-nav a.dois_cinco{
+  width: 70px;
+}
+
+.index-nav a.dois_seis{
+  width: 70px;
+}
+
+.index-nav a.tres{
+  width: 50px;
+}
+
+.index-nav a.quatro{
+  width: 100px;
 }

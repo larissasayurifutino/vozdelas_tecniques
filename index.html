@@ -21,7 +21,7 @@
     
         <h1 class="article-title-detail">Projeto Voz Delas</h1>
 
-        <h2 class="subtitle"><b>Entenda os detalhes teóricos e técnicos com imagens, diagramas, referências e descubra as limitações.</b></h2>
+        <h2 class="subtitle"><b>Entenda os detalhes teóricos e técnicos com imagens e descubra as dificuldades desse projeto.</b></h2>
 
         <br><br>
 
@@ -103,10 +103,28 @@
 
     </div>
 
-    <p class="corpo-subtitulo">01) Ler Textos</p>
+    <p class="corpo-subtitulo">Passos:</p>
+
+    <nav class="index-nav">
+        <a class="um" href="#primeiro">Ler textos</a>
+        <a class="dois_um" href="#dois_um">Entidades</a>
+        <a class="dois_dois" href="#dois_dois">Citações</a>
+        <a class="dois_tres" href="#dois_tres">Clas.Gram.</a>
+        <a class="dois_quatro" href="#dois_quatro">Gênero</a>
+        <a class="dois_cinco" href="#dois_cinco">Atribuir</a>
+        <a class="dois_seis" href="#dois_seis">Caracterizar</a> 
+        <a class="tres" href="#terceiro">Métricas</a>
+        <a class="quatro" href="#quarto">Acompanhamento</a>
+      </nav>
+
+
+    <p class="corpo-subtitulo" id="primeiro">Ler Textos</p>
     <p class="corpo-texto">Consideramos que as reportagens estão disponíveis em arquivos.</p> 
 
-    <img src="assets/01_json_draw.jpg" alt="Chart" class="center-image">
+    <div class="img-texto">
+        <img src="assets/01_json_draw.jpg" alt="Chart" class="center-image">
+    </div>
+    
 
     <p class="corpo-texto">Cada reportagem é representada pelo seu conteúdo textual: título, sub-título e o texto propriamente dito.</p>
 
@@ -122,7 +140,7 @@
     <p class="corpo-texto"> Usamos as implementações do pacote spacy da linguagem Python.</p>
 
 
-    <p class="corpo-subtitulo">02.A) Reconhecimento de entidades</p>
+    <p class="corpo-subtitulo" id="dois_um">Reconhecimento de entidades</p>
     <p class="corpo-texto"> Essa é a etapa que equivale a reconhecer quais trechos de texto são nomes próprios.</p>
     <p class="corpo-texto"> Cada texto passa por um modelo de Reconhecimento de Entidades (named entity recognition, ou NER em inglês). </p>
     <p class="corpo-texto"> O modelo reconhece trechos de texto que constituem nomes próprios e categoriza entre Pessoa, Localização, Organização, Moeda, por exemplo. </p>
@@ -133,7 +151,7 @@
     </div>
 
 
-    <p class="corpo-subtitulo">02.B) Reconhecimento de citações</p>
+    <p class="corpo-subtitulo" id="dois_dois">Reconhecimento de citações</p>
     <p class="corpo-texto"> Em cada texto reconhecemos os trechos que são citações diretas de uma pessoa. </p>
     <p class="corpo-texto"> Para isso, usamos algo mais simples: Expressões Regulares. </p>
     <p class="corpo-texto"> Logo, estamos identificando um padrão de texto com uma linguagem específica para isso. </p>
@@ -146,19 +164,27 @@
 
     
 
+    <p class="corpo-subtitulo" id="dois_tres">Classificação Gramatical</p>
+    <p class="corpo-texto"> Cada palavra é rotulada em categorias gramaticais (substantivos, verbos, pronomes, advérbios, artigos e conjunções) em uma tarefa conhecida como POS tagging. </p>
+
+
+    <div class="img-texto">
+        <img src="assets/pos_tag.jpg" alt="Chart" class="center-image">
+    </div>
 
 
 
-
-    <p class="corpo-subtitulo">02.D) Atribuir gênero para os nomes encontrados</p>
+    <p class="corpo-subtitulo" id="dois_quatro">Atribuir gênero para os nomes encontrados</p>
     <p class="corpo-texto">Cada entidade é representada pelo seu 1º nome próprio.</p> 
     <p class="corpo-texto">Usamos uma base do IBGE para atribuir um gênero a cada nome, disponível em:
         <a href="https://brasil.io/dataset/genero-nomes/nomes/">brasil.io/dataset/genero-nomes</a>.</p>
 
-    <img src="assets/brasilio.png" alt="Chart" class="center-image">
+    <div class="img-texto"> 
+        <img src="assets/brasilio.png" alt="Chart" class="center-image">
+    </div>
 
 
-    <p class="corpo-subtitulo">02.E) Atribuir cada citação a um nome próprio</p>
+    <p class="corpo-subtitulo" id="dois_cinco">Atribuir cada citação a um nome próprio</p>
     <p class="corpo-texto">Precisamos responder: Dadas essas X declarações e essas pessoas Y quem falou o quê?</p> 
     <p class="corpo-texto">Parece intuitivo que uma declaração seja acompanhada de quem a fez. </p>
     <p class="corpo-texto">Então vamos considerar a proximidade entre as as sentenças com citações e os nomes próprios.</p>
@@ -178,10 +204,13 @@
     
     <p class="corpo-texto">Cada aspas é atribuída à entidade mais próxima. </p>
 
-    <img src="assets/matriz_distancia.jpg" alt="Chart" class="center-image">
+    <div class="img-texto">
+        <img src="assets/matriz_distancia.jpg" alt="Chart" class="center-image">
+    </div>
+    
 
 
-    <p class="corpo-subtitulo">02.F) Caracterizar entidades</p>
+    <p class="corpo-subtitulo" id="dois_seis">Caracterizar entidades</p>
     <p class="corpo-texto"> Quem são as mulheres entrevistadas? </p>
     <p class="corpo-texto"> Pegamos os termos que acompanham (estão na vizinhança) das entidades. </p>
 
@@ -199,7 +228,7 @@
 
 
 
-    <p class="corpo-subtitulo">03) Métricas</p>
+    <p class="corpo-subtitulo" id="terceiro">Métricas</p>
     <p class="corpo-texto"> Cada texto é representado por métricas resumo que são basicamente contagens de entidades com e sem citação por gênero. </p>
 
     <div class="img-texto">
@@ -208,7 +237,7 @@
 
 
 
-    <p class="corpo-subtitulo">04) Resultados</p>
+    <p class="corpo-subtitulo" id="quarto">Acompanhamento</p>
     <p class="corpo-texto"> As métricas são acompanhadas diariamente e são reportadas aos jornalistas e editorias por meio de e-mail semanal. </p>
 
     <div class="img-texto">
