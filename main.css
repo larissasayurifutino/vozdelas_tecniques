@@ -25,8 +25,43 @@ body {
     margin: 0 auto;
 }
 
-* {
-    box-sizing: border-box;
+.article-social-icons {
+  max-width: var(--main-column-max);
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: center;
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;
+}
+
+.article-social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+/* Itens 'a' dentro do elemento '.article-social-icons' */
+/* Propriedades de estilo como serão visualizados no estado natural */
+.article-social-icons a {
+  font-size: 2rem;
+  width: 5rem;
+  height: 5rem;
+  text-decoration: none;
+  color: rgba(190, 190, 190, 1);
+  border: 1px solid rgba(220, 220, 220, 1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+/*'hover' não é uma classe. Eh um estado.*/
+/*Usamos ':'*/
+.article-social-icons a:hover {
+  font-size: 2rem;
+  text-decoration: none;
+  color: rgba(150, 150, 150, 1);
+  background-color: rgba(240, 240, 240, 0.5);
+  border: 1px solid rgba(150, 150, 150, 1);
 }
 
 .cabecalho{
@@ -257,6 +292,7 @@ div.img-texto{
   max-height: 620px;
 }
 
+
 .gal_carro{
   height: auto;
   margin: 20px auto;
@@ -351,4 +387,19 @@ justify-content: center;
 
 .card_modogeral_05{
   background-image: url('assets/06_attrib_text.jpg');
+}
+
+/*Para leitores*/
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
