@@ -91,11 +91,11 @@ h2.subtitle,
 }
 
 .article-title {
-    font-size: 10.0rem;
+    font-size: 7.0rem;
 }
 
 .article-title-detail{
-    font-size: 2.0rem;
+    font-size: 4.0rem;
 }
 
 .article-author {
@@ -140,51 +140,6 @@ p {
 
 }
 
-.cont-gal-horiz{
-    text-align: left; 
-    grid-column-start: 1;/* elemento começa no início da coluna 1  */
-    grid-column-end: span 1;
-    grid-row-start: auto;
-    grid-row-end: auto; 
-    background-color: #FF9B6D;
-    border: 1px solid blueviolet;
-    /*display: block;*/
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-
-
-div.gal-horiz {
-    margin: 3px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-    padding: 10px;
-    height: fit-content;
-    box-shadow: 2px 2px 20px #d1d1d1;
-}
-  
-
-div.gal-horiz:hover {
-    border: 1px solid #777;
-}
-  
-
-div.gal-horiz img {
-    width: 100%;
-    height: 80%;
-}
-  
-
-div.desc {
-    padding: 5px;
-    text-align: left;
-    font-size: 1.2rem;
-}
 
 .center-image {
     display: block;
@@ -370,15 +325,15 @@ justify-content: center;
 }
 
 .card_modogeral_01{
-  background-image: url('assets/02_readfiles_text.jpg');
+  background-image: url('assets/01_readfiles_text.jpg');
 }
 
 .card_modogeral_02{
-  background-image: url('assets/03_entities_text.jpg');
+  background-image: url('assets/02_entities_text.jpg');
 }
 
 .card_modogeral_03{
-  background-image: url('assets/05_gender_text.jpg');
+  background-image: url('assets/03_gender_text.jpg');
 }
 
 .card_modogeral_04{
@@ -386,7 +341,7 @@ justify-content: center;
 }
 
 .card_modogeral_05{
-  background-image: url('assets/06_attrib_text.jpg');
+  background-image: url('assets/05_attrib_text.jpg');
 }
 
 /*Para leitores*/
