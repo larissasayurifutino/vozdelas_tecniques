@@ -1,4 +1,4 @@
-# vozdelas_tecniques
+# vozdelas_README
 
 ## About
 
@@ -10,13 +10,13 @@ To document the project with a glimpse of theoretical aspects.
 
 ## How to use it
 
-HTMl code at index.html. 
+HTML code at index.html. 
 
 CSS code at main.CSS.
 
 ## To do
 
-Develop a version that has comments with defficulties/challenges from each step.
+Develop a version that has comments with difficulties/challenges from each step.
 
 ## Last update
 
@@ -29,4 +29,4 @@ Larissa Sayuri Futino Castro dos Santos
 
 ## Acknowledment
 
-Many thanks to [@tiagombp](https://github.com/tiagombp) who have made comments and suggestions to this project.
+Many thanks to [@tiagombp](https://github.com/tiagombp) and *Carol Rozendo* who have made comments and suggestions to this project.
